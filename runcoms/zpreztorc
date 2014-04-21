@@ -164,3 +164,9 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+#
+# Maven
+#
+maven_plugins=(archetype assembly dependency eclipse javadoc jetty release sakai source tomcat versions)
+zstyle ':completion:*:mvn:*' plugins $maven_plugins
