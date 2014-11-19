@@ -20,19 +20,19 @@ alias ll='ls -lGh'
 alias l='ls -laGh'
 alias lt='ls -ltGh'
 alias md='mkdir -p'
-alias hr='fc -RI' # read in history from other shells only when you need it
-alias hs='pushd ~ && git add .zhistory && git commit -m ".zhistory" && popd' # commit shell history to source control
+#alias hr='fc -RI' # read in history from other shells only when you need it
+#alias hs='pushd ~ && git add .zhistory && git commit -m ".zhistory" && popd' # commit shell history to source control
 alias pop='popd'
 alias vi='vim'
-alias deploy-mvn-artifacts='mvn clean install javadoc:jar source:jar deploy'
+#alias deploy-mvn-artifacts='mvn clean install javadoc:jar source:jar deploy'
 if [[ "$OSTYPE" == darwin* ]]; then
     alias hibernateon="sudo pmset -a hibernatemode 7"
     alias hibernateoff="sudo pmset -a hibernatemode 0"
-    alias tomcat_start='./bin/startup.sh;tail -F logs/catalina.out'
-    alias jpda_start='export JPDA_ADDRESS=8000;export JPDA_TRANSPORT=dt_socket;./bin/catalina.sh jpda start;tail -F logs/catalina.out'
-    alias sak2cookie='export JAVA_OPTS="$JAVA_OPTS -Dsakai.cookieName=SAKAI2SESSIONID"'
-    alias j6='source ~/bin/j6'                                                                                                                                   ✱ ◼
-    alias j7='source ~/bin/j7'
+    #alias tomcat_start='./bin/startup.sh;tail -F logs/catalina.out'
+    #alias jpda_start='export JPDA_ADDRESS=8000;export JPDA_TRANSPORT=dt_socket;./bin/catalina.sh jpda start;tail -F logs/catalina.out'
+    #alias sak2cookie='export JAVA_OPTS="$JAVA_OPTS -Dsakai.cookieName=SAKAI2SESSIONID"'
+    #alias j6='source ~/bin/j6'                                                                                                                                   ✱ ◼
+    #alias j7='source ~/bin/j7'
 fi
 
 ###############################################################################
@@ -46,22 +46,22 @@ alias gti='git' # common typo
 ###############################################################################
 # AWS EC2 general
 ###############################################################################
-AWS_CREDENTIAL_FILE_PATH="$HOME/.ec2/aws_credential_file"
-if [[ -f $AWS_CREDENTIAL_FILE_PATH ]]; then
-    export EC2_URL=https://ec2.us-west-1.amazonaws.com
-    export AWS_CREDENTIAL_FILE="$AWS_CREDENTIAL_FILE_PATH"
-fi
+# AWS_CREDENTIAL_FILE_PATH="$HOME/.ec2/aws_credential_file"
+# if [[ -f $AWS_CREDENTIAL_FILE_PATH ]]; then
+#     export EC2_URL=https://ec2.us-west-1.amazonaws.com
+#     export AWS_CREDENTIAL_FILE="$AWS_CREDENTIAL_FILE_PATH"
+# fi
 
 ###############################################################################
 # compiler options
 ###############################################################################
-if [[ "$OSTYPE" == darwin* ]]; then
+#if [[ "$OSTYPE" == darwin* ]]; then
     # Use Apple's llvm-gcc compiler
     # export CC=/usr/bin/llvm-gcc
     # export CXX=/usr/bin/llvm-g++
     # export OBJC=/usr/bin/llvm-gcc
-    export ARCHFLAGS="-arch $CPUTYPE"
-fi
+#    export ARCHFLAGS="-arch $CPUTYPE"
+#fi
 
 ###############################################################################
 # environment
@@ -106,27 +106,27 @@ fi
 export JRE_HOME="$JAVA_HOME"
 export PATH="$JAVA_HOME/bin:$PATH"
 
-export JAVA_OPTS="-server \
--Xms1g \
--Xmx1g \
--XX:PermSize=512m \
--XX:MaxPermSize=512m \
--XX:+UseG1GC \
--XX:MaxGCPauseMillis=200 \
--XX:InitiatingHeapOccupancyPercent=45 \
--XX:G1ReservePercent=10 \
--XX:+DisableExplicitGC \
--XX:+UseCompressedOops \
--XX:+UseStringCache \
--XX:+OptimizeStringConcat \
--Djava.awt.headless=true \
--Djava.net.preferIPv4Stack=true \
--Djava.net.preferIPv6Addresses=false \
--Dfile.encoding=UTF8 \
--Dsun.lang.ClassLoader.allowArraySyntax=true \
--Djava.util.Arrays.useLegacyMergeSort=true \
--Djsse.enableSNIExtension=false \
--XX:+PrintCommandLineFlags"
+# export JAVA_OPTS="-server \
+# -Xms1g \
+# -Xmx1g \
+# -XX:PermSize=512m \
+# -XX:MaxPermSize=512m \
+# -XX:+UseG1GC \
+# -XX:MaxGCPauseMillis=200 \
+# -XX:InitiatingHeapOccupancyPercent=45 \
+# -XX:G1ReservePercent=10 \
+# -XX:+DisableExplicitGC \
+# -XX:+UseCompressedOops \
+# -XX:+UseStringCache \
+# -XX:+OptimizeStringConcat \
+# -Djava.awt.headless=true \
+# -Djava.net.preferIPv4Stack=true \
+# -Djava.net.preferIPv6Addresses=false \
+# -Dfile.encoding=UTF8 \
+# -Dsun.lang.ClassLoader.allowArraySyntax=true \
+# -Djava.util.Arrays.useLegacyMergeSort=true \
+# -Djsse.enableSNIExtension=false \
+# -XX:+PrintCommandLineFlags"
 
 export CATALINA_OPTS="-Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false \
 -Dorg.apache.jasper.compiler.Parser.STRICT_WHITESPACE=false \
