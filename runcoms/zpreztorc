@@ -10,7 +10,7 @@
 #
 
 # Set case-sensitivity for completion, history lookup, etc.
-# zstyle ':prezto:*:*' case-sensitive 'yes'
+zstyle ':prezto:*:*' case-sensitive 'yes'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
@@ -23,6 +23,8 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
+#   'ec2-api-tools' 
+
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -32,7 +34,6 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'history' \
   'directory' \
-  'ec2-api-tools' \
   'grc' \
   'brew' \
   'osx' \
@@ -40,6 +41,7 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'ruby' \
+  'node' \
   'completion' \
   'syntax-highlighting' \
   'history-substring-search' \
